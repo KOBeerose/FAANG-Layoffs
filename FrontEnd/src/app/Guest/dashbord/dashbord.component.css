@@ -1,0 +1,18 @@
+header {
+  background-color: #37517e;
+}
+
+.panel-heading h2 {
+  text-align: center;
+  font-size: 50px;
+  margin-left: -100px;
+  margin-bottom: 50px;
+}
+
+.panel-body {
+  width: 90%;
+  margin-left: auto;
+  margin-right: auto;
+  margin-bottom: 80px;
+  box-shadow: 0 13px 40px -13px rgba(0, 0, 0, 0.75);
+}

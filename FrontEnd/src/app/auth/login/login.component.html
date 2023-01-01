@@ -1,0 +1,88 @@
+<header id="header" class="fixed-top ">
+    <div class="container d-flex align-items-center">
+        <h1 class="logo me-auto"><a routerLink="/home">Faang Layoffs</a></h1>
+        <nav id="navbar" class="navbar">
+            <ul>
+                <li><a class="getstarted scrollto" routerLink="/login">Sign In </a></li>
+                <li><a class="getstarted scrollto" routerLink="/signup">Sign Up</a></li>
+            </ul>
+            <i class="bi bi-list mobile-nav-toggle"></i>
+        </nav>
+    </div>
+</header>
+<div style="width: 100%; height:100px"></div>
+<div class="container-fluid">
+    <div class="row">
+        <div class="col-md-6">
+            <img src="../../../assets/img/login2.svg" height="100%" width="100%" alt="">
+        </div>
+        <div class="col-md-4 mt-3 mb-2">
+            <h3 class=" text-center"><b>Welcome To Faang Layoffs</b></h3>
+
+            <form action="" class="mt-5 p-5">
+                <h5 class="mb-3">Login </h5>
+                <div class="form-floating mb-3">
+                    <input type="text" class="form-control" id="floatingInput" placeholder="Username" name="username"
+                        [(ngModel)]="username">
+                    <label for="floatingInput">Email address</label>
+                </div>
+                <div class="form-floating mb-3">
+                    <input type="password" class="form-control" id="floatingPassword" placeholder="Password"
+                        name="password" [(ngModel)]="password">
+                    <label for="floatingPassword">Password</label>
+                </div>
+                <div class="d-grid gap-2 d-md-flex justify-content-md-end">
+                    <button type="button" class="btn btn-outline-primary" (click)="login()">Login</button>
+                </div>
+
+                <a routerLink="/signup" class="text-primary" style="text-decoration: none;">Need account ? </a>
+            </form>
+
+        </div>
+        <div class="col-md-2">
+        </div>
+    </div>
+</div>
+<div style="width: 100%; height:100px"></div>
+<footer id="footer">
+
+    <div class="footer-top">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-3 col-md-6 footer-links">
+                    <h4>Useful Links</h4>
+                    <ul>
+                        <li><i class="bx bx-chevron-right"></i> <a href="#">Home</a></li>
+                        <li><i class="bx bx-chevron-right"></i> <a href="#services">Companies</a></li>
+                        <li><i class="bx bx-chevron-right"></i> <a href="#about">About</a></li>
+                        <li><i class="bx bx-chevron-right"></i> <a href="#team">Reviews</a></li>
+                        <li><i class="bx bx-chevron-right"></i> <a href="#contact">Contact US</a></li>
+                    </ul>
+                </div>
+                <div class="col-lg-3 col-md-6 footer-links">
+                    <h4>Our Companies</h4>
+                    <ul>
+                        <li><i class="bx bx-chevron-right"></i> <a href="#">Web Design</a></li>
+                        <li><i class="bx bx-chevron-right"></i> <a href="#">Web Development</a></li>
+                        <li><i class="bx bx-chevron-right"></i> <a href="#">Product Management</a></li>
+                        <li><i class="bx bx-chevron-right"></i> <a href="#">Marketing</a></li>
+                        <li><i class="bx bx-chevron-right"></i> <a href="#">Graphic Design</a></li>
+                    </ul>
+                </div>
+                <div class="col-lg-3 col-md-6 footer-links">
+                    <h4>Our Social Networks</h4>
+                    <p></p>
+                    <div class="social-links mt-3"> <a href="#" class="twitter"><i class="bx bxl-twitter"></i></a> <a
+                            href="#" class="facebook"><i class="bx bxl-facebook"></i></a> <a href="#"
+                            class="instagram"><i class="bx bxl-instagram"></i></a> <a href="#" class="google-plus"><i
+                                class="bx bxl-skype"></i></a> <a href="#" class="linkedin"><i
+                                class="bx bxl-linkedin"></i></a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="container footer-bottom clearfix">
+        <div class="copyright">Copyright &copy; faang-layoffs <strong><span>2022</span></strong>. All Rights Reserved</div>
+    </div>
+</footer>

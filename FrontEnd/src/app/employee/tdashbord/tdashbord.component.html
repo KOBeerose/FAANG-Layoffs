@@ -1,0 +1,339 @@
+<header id="header" class="fixed-top ">
+    <div class="container d-flex align-items-center">
+        <h1 class="logo me-auto"><a routerLink="/home">Faang Layoffs</a></h1>
+        <nav id="navbar" class="navbar">
+            <ul>
+                <li><a class="getstarted scrollto">{{employee.fullName}} </a></li>
+                <li><a class="getstarted scrollto" routerLink="/login">Log Out </a></li>
+            </ul>
+            <i class="bi bi-list mobile-nav-toggle"></i>
+        </nav>
+    </div>
+</header>
+<div style="width: 100%; height:150px"></div>
+<div class="panel panel-primary">
+    <div class="panel-heading">
+        <div class="panel-content">
+        <h2>Will I get laid Off?! 😱😨</h2>
+        <br>
+        <div class="header2">
+            <h3 style="font-size:30px">Enter your details below to find out!</h3>
+        </div>
+
+        <br>
+            <div class="col col-lg-12">
+                <input type="text" class="form-control" placeholder="Link" name="Link"
+                [(ngModel)]="link">
+            </div>
+            <br>        <br>
+            <div class="row justify-content-center">
+                <button type="submit" class="seach btn btn-lg btn-primary align-self-center" (click)="getPrediction()">
+                    Search
+                </button>
+            </div>
+            <br>        <br>
+            <ng-container *ngIf="waiting1">
+                <div class="waiting col-lg-4 my-2 min-vh-20">
+
+                  <div class="card white card-lift--hover ">
+                    <h3 class="detail">Hold tight! we're scaping 🔎 data for you!</h3>  
+                    <div class="card-body py-3 vh-10 d-flex">
+
+                      <div class="lds-spinner align-self-center mx-auto">
+                        <div></div>
+                        <div></div>
+                        <div></div>
+                        <div></div>
+                        <div></div>
+                        <div></div>
+                        <div></div>
+                        <div></div>
+                        <div></div>
+                        <div></div>
+                        <div></div>
+                        <div></div>
+                        <div></div>
+                        <div></div>
+                      </div>
+
+                    </div>
+                    <div>
+                      <h1 class="display-4 float-right mr-4 text-warning"></h1>
+                    </div>
+                  </div>
+                </div>
+                
+            </ng-container>
+
+            <ng-container *ngIf="result1">
+                <!--  -->
+            <div class="wrapper">
+                <br>   
+                <svg class="checkmark" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 52 52"> <circle class="checkmark__circle" cx="26" cy="26" r="25" fill="none"/> <path class="checkmark__check" fill="none" d="M14.1 27.2l7.1 7.2 16.7-16.8"/>
+                </svg>
+                <br>
+                <h3 class="detail"> Name:  <b> {{employeeData.name}} </b></h3>
+                <br>
+                <h3 class="detail"> Headline :  <b> {{employeeData.headline}} </b></h3>
+                <br>
+                <h3 class="detail"> location :  <b> {{employeeData.location}} </b></h3>
+                <br>
+                <h3 class="detail"> Company :  <b>{{employeeData.company}} </b></h3>
+
+            </div>
+            </ng-container>
+
+            <ng-container *ngIf="waiting2">
+           
+
+
+                <div class="waiting col-lg-4 my-2 min-vh-20">
+
+                  <div class="card black card-lift--hover">
+                    <h3 class="detail">Time for some Machine learning 🪄 Magic</h3>
+                    <div class="card-body py-3 vh-10 d-flex">
+
+                      <div class="lds-spinner align-self-center mx-auto" >
+                        <div></div>
+                        <div></div>
+                        <div></div>
+                        <div></div>
+                        <div></div>
+                        <div></div>
+                        <div></div>
+                        <div></div>
+                        <div></div>
+                        <div></div>
+                        <div></div>
+                        <div></div>
+                        <div></div>
+                        <div></div>
+                      </div>
+
+                    </div>
+                    <div>
+                      <h1 class="display-4 float-right mr-4 red"></h1>
+                    </div>
+                  </div>
+                </div>
+                
+
+            </ng-container>
+
+
+            <ng-container *ngIf="result2">
+  
+                <div class="wrapper">
+                    <br>
+                    <svg class="checkmark" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 52 52"> <circle class="checkmark__circle" cx="26" cy="26" r="25" fill="none"/> <path class="checkmark__check" fill="none" d="M14.1 27.2l7.1 7.2 16.7-16.8"/>
+                    </svg>
+                                        <br>
+                    <h3 class="detail">Years at {{employeeData.company}} :  <b> {{company_worktime}}</b></h3>
+                    <br>
+                    <h3 class="detail">Total Years of Experience :  <b> {{work_months}}</b></h3>
+                    <br>
+                    <h3 class="prediction">There is <b>{{prediction}}%</b> chance that you will be laid off</h3>
+
+                </div>
+            </ng-container>
+        </div>
+        <!-- <div class="addNewCompany">
+            <button class="btn btn-success" (click)="openModal('modal2',2)">Add New Company</button>
+        </div>
+    </div>
+    <div class="panel-body">
+        <table id="example" class="table table-striped table-bordered table-sm row-border hover" cellspacing="0">
+            <thead>
+                <tr>
+                    <th>Company</th>
+                    <th>Description</th>
+                    <th>Open Date</th>
+                    <th>Close Date</th>
+                    <th>Actions</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr *ngFor="let company of companiesByEmployee">
+                    <td>{{company.nom}}</td>
+                    <td>{{company.description}}</td>
+                    <td>{{company.openDate}}</td>
+                    <td>{{company.closeDate}}</td>
+
+                    <td>
+                        <button style='margin-right:16px' class="btn btn-success"
+                            (click)="showCompanyWithDetails('modal1',company.id)">details</button>
+                        <button style='margin-right:16px' class="btn btn-primary"
+                            (click)="showCompanyWithDetails('modal3',company.id)">Edit</button>
+                        <button style='margin-right:16px' class="btn btn-danger"
+                            (click)="deleteCompany(company.id)">Delete</button>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</div>
+
+
+
+
+<modal-popup id="modal1">
+    <form action="" class="mt-1" style="padding-left : 20px;padding-right : 20px">
+        <h5 class="mb-3">Company Details</h5>
+        <div class="form-floating mb-3">
+            <input type="text" class="form-control" id="floatingInput" placeholder="Name" name="Name"
+                [(ngModel)]="companyName" readonly>
+            <label for="floatingInput">Name</label>
+        </div>
+        <div class="form-floating mb-3">
+            <input type="text" class="form-control" id="floatingInput" placeholder="company Description"
+                name="companyDescription" [(ngModel)]="companyDescription" readonly>
+            <label for="floatingInput">Description</label>
+        </div>
+
+        <div class="form-floating mb-3">
+            <input type="date" class="form-control" id="floatingPassword" placeholder="Password" name="openDate"
+                [(ngModel)]="openDate" readonly>
+            <label for="floatingPassword">Open Date</label>
+        </div>
+        <div class="form-floating mb-3">
+            <input type="date" class="form-control" id="floatingPassword" placeholder="Password" name="closeDate"
+                [(ngModel)]="closeDate" readonly>
+            <label for="floatingPassword">Close Date</label>
+        </div>
+
+
+        <div class="d-grid gap-2 d-md-flex justify-content-md-end">
+            <button class="btn btn-danger" (click)="closeModal('modal1');">Close</button>
+        </div>
+
+    </form>
+
+</modal-popup>
+
+<modal-popup id="modal2">
+
+    <form action="" class="mt-1" style="padding-left : 20px;padding-right : 20px">
+        <h5 class=" mb-3">Add A New Company </h5>
+        <div class="form-floating mb-3">
+            <input type="text" class="form-control" id="floatingInput" placeholder="Name" name="Name"
+                [(ngModel)]="companyName" required>
+            <label for="floatingInput">Name</label>
+        </div>
+        <div class="form-floating mb-3">
+            <input type="text" class="form-control" id="floatingInput" placeholder="company Description"
+                name="companyDescription" [(ngModel)]="companyDescription">
+            <label for="floatingInput">Description</label>
+        </div>
+
+        <div class="form-floating mb-3">
+            <input type="date" class="form-control" id="floatingPassword" placeholder="Password" name="openDate"
+                [(ngModel)]="openDate">
+            <label for="floatingPassword">Open Date</label>
+        </div>
+        <div class="form-floating mb-3">
+            <input type="date" class="form-control" id="floatingPassword" placeholder="Password" name="closeDate"
+                [(ngModel)]="closeDate">
+            <label for="floatingPassword">Close Date</label>
+        </div>
+
+
+        <div class="d-grid gap-2 d-md-flex justify-content-md-end">
+            <button class="btn btn-danger" (click)="closeModal('modal2');">Close</button>
+            <button type="button" class="btn btn-outline-primary" (click)="addCompany('modal2');">Register</button>
+        </div>
+
+    </form>
+
+
+</modal-popup>
+
+<modal-popup id="modal3">
+
+    <form action="" class="mt-1" style="padding-left : 20px;padding-right : 20px">
+        <h5 class="mb-3">Edit Company </h5>
+        <div class="form-floating mb-3">
+            <input type="text" class="form-control" id="floatingInput" placeholder="Name" name="Name"
+                [(ngModel)]="companyName">
+            <label for="floatingInput">Name</label>
+        </div>
+        <div class="form-floating mb-3">
+            <input type="text" class="form-control" id="floatingInput" placeholder="company Description"
+                name="companyDescription" [(ngModel)]="companyDescription">
+            <label for="floatingInput">Description</label>
+        </div>
+
+        <div class="form-floating mb-3">
+            <input type="date" class="form-control" id="floatingPassword" placeholder="Password" name="openDate"
+                [(ngModel)]="openDate">
+            <label for="floatingPassword">Open Date</label>
+        </div>
+        <div class="form-floating mb-3">
+            <input type="date" class="form-control" id="floatingPassword" placeholder="Password" name="closeDate"
+                [(ngModel)]="closeDate">
+            <label for="floatingPassword">Close Date</label>
+        </div>
+
+
+        <div class="d-grid gap-2 d-md-flex justify-content-md-end">
+            <button class="btn btn-danger" (click)="closeModal('modal3');">Close</button>
+            <button type="button" class="btn btn-outline-primary" (click)="editCompany('modal3');">Save</button>
+        </div>
+
+    </form>
+
+
+</modal-popup> -->
+
+<modal-popup id="modal4">
+    <h1 class="mb-3">Warning !!!</h1>
+    <h4>There are still some guests enrolling this company, you want to delete it anyway</h4>
+    <div class="d-grid gap-2 d-md-flex justify-content-md-end">
+        <button class="btn btn-outline-primary" (click)="closeModal('modal4');">Cancel</button>
+        <button type="button" class="btn btn-danger" (click)="forcedeleteCompany();">Delete</button>
+    </div>
+</modal-popup>
+
+
+
+<footer id="footer">
+
+    <div class="footer-top">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-3 col-md-6 footer-links">
+                    <h4>Useful Links</h4>
+                    <ul>
+                        <li><i class="bx bx-chevron-right"></i> <a href="#">Home</a></li>
+                        <li><i class="bx bx-chevron-right"></i> <a href="#services">Companies</a></li>
+                        <li><i class="bx bx-chevron-right"></i> <a href="#about">About</a></li>
+                        <li><i class="bx bx-chevron-right"></i> <a href="#team">Reviews</a></li>
+                        <li><i class="bx bx-chevron-right"></i> <a href="#contact">Contact US</a></li>
+                    </ul>
+                </div>
+                <div class="col-lg-3 col-md-6 footer-links">
+                    <h4>Our Companies</h4>
+                    <ul>
+                        <li><i class="bx bx-chevron-right"></i> <a href="#">Web Design</a></li>
+                        <li><i class="bx bx-chevron-right"></i> <a href="#">Web Development</a></li>
+                        <li><i class="bx bx-chevron-right"></i> <a href="#">Product Management</a></li>
+                        <li><i class="bx bx-chevron-right"></i> <a href="#">Marketing</a></li>
+                        <li><i class="bx bx-chevron-right"></i> <a href="#">Graphic Design</a></li>
+                    </ul>
+                </div>
+                <div class="col-lg-3 col-md-6 footer-links">
+                    <h4>Our Social Networks</h4>
+                    <p></p>
+                    <div class="social-links mt-3"> <a href="#" class="twitter"><i class="bx bxl-twitter"></i></a> <a
+                            href="#" class="facebook"><i class="bx bxl-facebook"></i></a> <a href="#"
+                            class="instagram"><i class="bx bxl-instagram"></i></a> <a href="#" class="google-plus"><i
+                                class="bx bxl-skype"></i></a> <a href="#" class="linkedin"><i
+                                class="bx bxl-linkedin"></i></a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="container footer-bottom clearfix">
+        <div class="copyright">Copyright &copy; faang-layoffs <strong><span>2022</span></strong>. All Rights Reserved</div>
+    </div>
+</footer>

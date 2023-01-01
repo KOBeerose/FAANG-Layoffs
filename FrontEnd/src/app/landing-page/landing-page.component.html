@@ -1,0 +1,359 @@
+<header id="header" class="fixed-top" style="background-color:#37517e;">
+   <div class="container d-flex align-items-center">
+      <h1 class="logo me-auto"><a routerLink="/home">Faang Layoffs</a></h1>
+      <nav id="navbar" class="navbar">
+         <ul>
+            <li><a class="nav-link scrollto active" href="#hero">Home</a></li>
+            <li><a class="nav-link scrollto" href="#services">Companies</a></li>
+            <li><a class="nav-link scrollto" href="#about">About</a></li>
+            <li><a class="nav-link scrollto" href="#team">Reviews</a></li>
+            <li><a class="nav-link scrollto" href="#contact">Contact</a></li>
+            <li><a class="getstarted scrollto" routerLink="/login">Sign In </a></li>
+            <li><a class="getstarted scrollto" routerLink="/signup">Sign Up</a></li>
+         </ul>
+         <i class="bi bi-list mobile-nav-toggle"></i>
+      </nav>
+   </div>
+</header>
+<section id="hero" class="d-flex align-items-center">
+   <div class="container">
+      <div class="row">
+         <div class="col-lg-6 d-flex flex-column justify-content-center pt-4 pt-lg-0 order-2 order-lg-1"
+            data-aos="fade-up" data-aos-delay="200">
+            <h1>Wanna know if you will get fired?</h1>
+            <h2>Faang Layoffs Platfrom uses Machine Learning to let you know how likely is it.</h2>
+            <div class="d-flex justify-content-center justify-content-lg-start">
+               <a href="" class="btn-get-started scrollto">Get Started</a>
+
+            </div>
+         </div>
+         <div class="col-lg-6 order-1 order-lg-2 hero-img" data-aos="zoom-in" data-aos-delay="200"> <img
+               src="assets/img/hero-img.svg" class="img-fluid animated" alt=""></div>
+      </div>
+   </div>
+</section>
+<main id="main">
+
+   <!--Partenaires-->
+   <section id="clients" class="clients section-bg">
+      <div class="container">
+         <div class="row" data-aos="zoom-in">
+            <div class="col-lg-2 col-md-4 col-6 d-flex align-items-center justify-content-center"> <img
+                  src="assets/img/clients/client-1.png" class="img-fluid" alt=""></div>
+            <div class="col-lg-2 col-md-4 col-6 d-flex align-items-center justify-content-center"> <img
+                  src="assets/img/clients/client-2.png" class="img-fluid" alt=""></div>
+            <div class="col-lg-2 col-md-4 col-6 d-flex align-items-center justify-content-center"> <img
+                  src="assets/img/clients/client-3.png" class="img-fluid" alt=""></div>
+            <div class="col-lg-2 col-md-4 col-6 d-flex align-items-center justify-content-center"> <img
+                  src="assets/img/clients/client-4.png" class="img-fluid" alt=""></div>
+            <div class="col-lg-2 col-md-4 col-6 d-flex align-items-center justify-content-center"> <img
+                  src="assets/img/clients/client-5.png" class="img-fluid" alt=""></div>
+            <div class="col-lg-2 col-md-4 col-6 d-flex align-items-center justify-content-center"> <img
+                  src="assets/img/clients/client-6.png" class="img-fluid" alt=""></div>
+         </div>
+      </div>
+   </section>
+
+   <!--Companies-->
+
+   <section id="services" class="services section-bg">
+      <div class="container" data-aos="fade-up">
+         <div class="section-title">
+            <h2>Companies</h2>
+            <p></p>
+         </div>
+         <div class="row">
+            <owl-carousel-o [options]="customOptions">
+               <ng-template carouselSlide *ngFor="let company of Allcompanies">
+                  <div data-aos="zoom-in" data-aos-delay="100" style="margin-right:12px;">
+                     <div class="icon-box">
+                        <div class="icon"><i class="bx bx-layer"></i></div>
+                        <h4><a>{{company.nom}}</a></h4>
+                        <p>{{company.description}}</p>
+                        <a class="btn-company" (click)="showCompanyWithDetails('modaldetails',company.id)">Details</a>
+                     </div>
+                  </div>
+               </ng-template>
+            </owl-carousel-o>
+         </div>
+      </div>
+   </section>
+
+
+   <section id="about" class="about">
+      <div class="container" data-aos="fade-up">
+         <div class="section-title">
+            <h2>About Us</h2>
+         </div>
+         <div class="row content">
+            <div class="col-lg-6">
+               <p>Training doesn’t happen when all your companies are lost in several levels of subfolders.
+                  Remove hurdles from the track to training success by making Faang Layoffs your one-stop training hub.</p>
+               <ul>
+                  <li><i class="ri-check-double-line"></i> Faang Layoffs is effective at achieving good outcomes</li>
+                  <li><i class="ri-check-double-line"></i> A definite pro of e-Learning is that it lets learners choose
+                     where and when you learn</li>
+                  <li><i class="ri-check-double-line"></i> The theory of Faang Layoffs is that different people learn better
+                     when information is presented to them in their preferred style</li>
+               </ul>
+            </div>
+            <div class="col-lg-6 pt-4 pt-lg-0">
+               <p>Faang Layoffs isn’t just easy to set up, it’s easy to use. A simple,
+                  clean interface means your users won’t struggle to engage with training.
+                  All they need to do is log in and start learning.</p>
+               <a href="#" class="btn-learn-more">Learn More</a>
+            </div>
+         </div>
+      </div>
+   </section>
+
+   <section id="cta" class="cta">
+      <div class="container" data-aos="zoom-in">
+         <div class="row">
+            <div class="col-lg-9 text-center text-lg-start">
+               <h3>Faang Layoffs </h3>
+               <p>Faang Layoffs is an online learning and teaching platform with over 2000 companies and 10 million guests.
+                  Learn programming, marketing, data science and more.</p>
+            </div>
+            <div class="col-lg-3 cta-btn-container text-center"> <a class="cta-btn align-middle"
+                  href="#services">Discover Our Companies</a></div>
+         </div>
+      </div>
+   </section>
+   <section id="about" class="about">
+      <div class="container" data-aos="fade-up">
+         <div class="section-title">
+            <h2>Our Missions and Values</h2>
+         </div>
+         <div class="row content">
+            <div class="col-lg-6">
+               <p>We love what we do, and we love our guests and employees. We choose to operate with values that are
+                  important to us:</p>
+               <ul>
+                  <li><i class="ri-check-double-line"></i> Quality</li>
+                  <p>We set high standards, and we work hard to maintain them. We never take a casual approach to
+                     quality.
+                  </p>
+                  <li><i class="ri-check-double-line"></i> Honesty and no over-commitments</li>
+                  <p>Our communication is clear and transparent. We do not believe in over-committing and
+                     under-delivering.
+                  </p>
+                  <li><i class="ri-check-double-line"></i> Openness</li>
+                  <p>Our communication is clear and transparent. We do not believe in over-committing and
+                     under-delivering.
+                  </p>
+               </ul>
+            </div>
+            <div class="col-lg-6 pt-4 pt-lg-0">
+               <p>Our dynamic team serves the guest community by providing training, research, and flexible support
+                  services.
+                  Through creative problem solving, collaboration,
+                  and reflection we provide an environment for growth in teaching and learning in an effort to best
+                  support
+                  our guests .</p>
+               <p>Faang Layoffs provides support and information to distance learners . Academic divisions offer many credit
+                  companies and curricula
+                  through several non-traditional delivery modes, including fully online and hybrid learning.</p>
+               <p>These delivery modes bring new learning options and opportunities to guests who have diverse
+                  learning
+                  styles, those who
+                  require flexibility in their schedules, and those who do not live within commuting distance</p>
+            </div>
+         </div>
+      </div>
+   </section>
+   <section id="team" class="team section-bg">
+      <div class="container" data-aos="fade-up">
+         <div class="section-title">
+            <h2>guest Reviews</h2>
+            <p>Here is what our guests say about Faang Layoffs:</p>
+         </div>
+         <div class="row">
+            <div class="col-lg-6">
+               <div class="member d-flex align-items-start" data-aos="zoom-in" data-aos-delay="100">
+                  <div class="pic"><img src="assets/img/guests/Youssef.jpg" class="img-fluid" alt=""></div>
+                  <div class="member-info">
+                     <h4>BENLGUARNI Mouad</h4>
+                     <!--<span>Chief Executive Officer</span>-->
+                     <p>"The well-structured curriculum took my coding knowledge from a total beginner level to a very
+                        confident level. It was everything I needed to land my first dev job at an amazing company."</p>
+                     <div class="social"> <a href=""><i class="ri-twitter-fill"></i></a> <a href=""><i
+                              class="ri-facebook-fill"></i></a> <a href=""><i class="ri-instagram-fill"></i></a> <a
+                           href=""> <i class="ri-linkedin-box-fill"></i> </a></div>
+                  </div>
+               </div>
+            </div>
+            <div class="col-lg-6 mt-4 mt-lg-0">
+               <div class="member d-flex align-items-start" data-aos="zoom-in" data-aos-delay="200">
+                  <div class="pic"><img src="assets/img/guests/Youssef.jpg" class="img-fluid" alt=""></div>
+                  <div class="member-info">
+                     <h4>BENLGUARNI Mouad</h4>
+                     <!--<span>Product Manager</span>-->
+                     <p>"I've always struggled with learning new languages. I've taken many companies but Faang Layoffs was the
+                        one which stuck. Studying Germany and English gave me confidence."</p>
+                     <div class="social"> <a href=""><i class="ri-twitter-fill"></i></a> <a href=""><i
+                              class="ri-facebook-fill"></i></a> <a href=""><i class="ri-instagram-fill"></i></a> <a
+                           href=""> <i class="ri-linkedin-box-fill"></i> </a></div>
+                  </div>
+               </div>
+            </div>
+            <div class="col-lg-6 mt-4">
+               <div class="member d-flex align-items-start" data-aos="zoom-in" data-aos-delay="300">
+                  <div class="pic"><img src="assets/img/guests/Youssef.jpg" class="img-fluid" alt=""></div>
+                  <div class="member-info">
+                     <h4>BENLGUARNI Mouad</h4>
+                     <!--<span>CTO</span>-->
+                     <p>"It's scary to change careers. I only gained confidence that I could code by working through the
+                        hundreds of hours of free lessons on Faang Layoffs. Within a year I had a six-figure job as a
+                        Software Engineer."</p>
+                     <div class="social"> <a href=""><i class="ri-twitter-fill"></i></a> <a href=""><i
+                              class="ri-facebook-fill"></i></a> <a href=""><i class="ri-instagram-fill"></i></a> <a
+                           href=""> <i class="ri-linkedin-box-fill"></i> </a></div>
+                  </div>
+               </div>
+            </div>
+            <div class="col-lg-6 mt-4">
+               <div class="member d-flex align-items-start" data-aos="zoom-in" data-aos-delay="400">
+                  <div class="pic"><img src="assets/img/guests/Youssef.jpg" class="img-fluid" alt=""></div>
+                  <div class="member-info">
+                     <h4>BENLGUARNI Mouad</h4>
+                     <!--<span>Accountant</span>-->
+                     <p>"Faang Layoffs probably has the best teaching depth of any online platform I’ve come across. The
+                        employees are all high-quality, respected professors, and the classes they teach can actually
+                        lead to completing accredited degrees."</p>
+                     <div class="social"> <a href=""><i class="ri-twitter-fill"></i></a> <a href=""><i
+                              class="ri-facebook-fill"></i></a> <a href=""><i class="ri-instagram-fill"></i></a> <a
+                           href=""> <i class="ri-linkedin-box-fill"></i> </a></div>
+                  </div>
+               </div>
+            </div>
+         </div>
+      </div>
+   </section>
+
+   <section id="contact" class="contact">
+      <div class="container" data-aos="fade-up">
+         <div class="section-title">
+            <h2>Contact Us</h2>
+            <p>Whether you're looking for answers, want to fix a problem, or just want to let us know how we did it,
+               there are plenty of ways to contact us here. We'll help you solve your problems quickly and easily,
+               bringing you back to more important things like relaxing on your new couch.</p>
+         </div>
+         <div class="row">
+            <div class="col-lg-5 d-flex align-items-stretch">
+               <div class="info" id="image-contact">
+                  <img src="assets/img/contact.svg" class="img-fluid animated" alt="">
+                  <div class="col-lg-6 order-1 order-lg-2 hero-img" data-aos="zoom-in" data-aos-delay="200">
+
+                  </div>
+               </div>
+            </div>
+            <div class="col-lg-7 mt-5 mt-lg-0 d-flex align-items-stretch">
+               <form action="#" method="post" role="form" class="php-email-form">
+                  <div class="row">
+                     <div class="form-group col-md-6"> <label for="name">Your Name</label> <input type="text"
+                           name="name" class="form-control" id="name" required></div>
+                     <div class="form-group col-md-6"> <label for="name">Your Email</label> <input type="email"
+                           class="form-control" name="email" id="email" required></div>
+                  </div>
+                  <div class="form-group"> <label for="name">Subject</label> <input type="text" class="form-control"
+                        name="subject" id="subject" required></div>
+                  <div class="form-group"> <label for="name">Message</label><textarea class="form-control"
+                        name="message" rows="10" required></textarea></div>
+                  <div class="my-3">
+                     <div class="loading">Loading</div>
+                     <div class="error-message"></div>
+                     <div class="sent-message">Your message has been sent. Thank you!</div>
+                  </div>
+                  <div class="text-center"><button type="submit">Send Message</button></div>
+               </form>
+            </div>
+         </div>
+      </div>
+   </section>
+</main>
+<footer id="footer">
+
+   <div class="footer-top">
+      <div class="container">
+         <div class="row">
+            <!--<div class="col-lg-3 col-md-6 footer-contact">
+              <h3>Therichpost</h3>
+              <p> Ludhiana <br> Punjab<br> India <br><br> <strong>Phone:</strong> +91 **** **** **<br> <strong>Email:</strong> <a href="#" class="__cf_email__">[email&#160;protected]</a><br></p>
+           </div>-->
+            <div class="col-lg-3 col-md-6 footer-links">
+               <h4>Useful Links</h4>
+               <ul>
+                  <li><i class="bx bx-chevron-right"></i> <a href="#">Home</a></li>
+                  <li><i class="bx bx-chevron-right"></i> <a href="#services">Companies</a></li>
+                  <li><i class="bx bx-chevron-right"></i> <a href="#about">About</a></li>
+                  <li><i class="bx bx-chevron-right"></i> <a href="#team">Reviews</a></li>
+                  <li><i class="bx bx-chevron-right"></i> <a href="#contact">Contact US</a></li>
+               </ul>
+            </div>
+            <div class="col-lg-3 col-md-6 footer-links">
+               <h4>Our Companies</h4>
+               <ul>
+                  <li><i class="bx bx-chevron-right"></i> <a href="#">Web Design</a></li>
+                  <li><i class="bx bx-chevron-right"></i> <a href="#">Web Development</a></li>
+                  <li><i class="bx bx-chevron-right"></i> <a href="#">Product Management</a></li>
+                  <li><i class="bx bx-chevron-right"></i> <a href="#">Marketing</a></li>
+                  <li><i class="bx bx-chevron-right"></i> <a href="#">Graphic Design</a></li>
+               </ul>
+            </div>
+            <div class="col-lg-3 col-md-6 footer-links">
+               <h4>Our Social Networks</h4>
+               <p></p>
+               <div class="social-links mt-3"> <a href="#" class="twitter"><i class="bx bxl-twitter"></i></a> <a
+                     href="#" class="facebook"><i class="bx bxl-facebook"></i></a> <a href="#" class="instagram"><i
+                        class="bx bxl-instagram"></i></a> <a href="#" class="google-plus"><i
+                        class="bx bxl-skype"></i></a> <a href="#" class="linkedin"><i class="bx bxl-linkedin"></i></a>
+               </div>
+            </div>
+         </div>
+      </div>
+   </div>
+   <div class="container footer-bottom clearfix">
+      <div class="copyright">Copyright &copy; faang-layoffs <strong><span>2022</span></strong>. All Rights Reserved</div>
+      <!--<div class="credits"> with love <a href="https://therichpost.com/">Therichpost</a></div>-->
+   </div>
+</footer>
+<!--<div id="preloader"></div>-->
+<a href="#" class="back-to-top d-flex align-items-center justify-content-center"><i
+      class="bi bi-arrow-up-short"></i></a>
+
+<!--Modal popup-->
+<modal-popup id="modaldetails">
+   <form action="" class="mt-1" style="padding-left : 20px;padding-right : 20px">
+      <h5 class="mb-3">Company Details</h5>
+      <div class="form-floating mb-3">
+         <input type="text" class="form-control" id="floatingInput" placeholder="Name" name="Name"
+            [(ngModel)]="companyName" readonly>
+         <label for="floatingInput">Name</label>
+      </div>
+      <div class="form-floating mb-3">
+         <input type="text" class="form-control" id="floatingInput" placeholder="company Description"
+            name="companyDescription" [(ngModel)]="companyDescription" readonly>
+         <label for="floatingInput">Description</label>
+      </div>
+
+      <div class="form-floating mb-3">
+         <input type="date" class="form-control" id="floatingPassword" placeholder="Password" name="openDate"
+            [(ngModel)]="openDate" readonly>
+         <label for="floatingPassword">Open Date</label>
+      </div>
+      <div class="form-floating mb-3">
+         <input type="date" class="form-control" id="floatingPassword" placeholder="Password" name="closeDate"
+            [(ngModel)]="closeDate" readonly>
+         <label for="floatingPassword">Close Date</label>
+      </div>
+
+
+      <div class="d-grid gap-2 d-md-flex justify-content-md-end">
+         <button class="btn btn-danger" (click)="closeModal('modaldetails');">Close</button>
+         <button class="btn btn-primary" (click)="EnrollCompanyLP('modaldetails');">Enroll</button>
+      </div>
+
+   </form>
+
+</modal-popup>

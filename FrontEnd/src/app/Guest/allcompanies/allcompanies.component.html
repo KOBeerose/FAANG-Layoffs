@@ -1,0 +1,142 @@
+<header id="header" class="fixed-top ">
+    <div class="container d-flex align-items-center">
+        <h1 class="logo me-auto"><a routerLink="/home">Faang Layoffs</a></h1>
+        <nav id="navbar" class="navbar">
+            <ul>
+                <li><a class="getstarted scrollto" routerLink="/guest/dashboard"> Enrollments</a></li>
+                <li><a class="getstarted scrollto"> All companies </a></li>
+                <li><a class="getstarted scrollto">{{guest.fullName}} </a></li>
+                <li><a class="getstarted scrollto" routerLink="/login">Log Out</a></li>
+
+            </ul>
+            <i class="bi bi-list mobile-nav-toggle"></i>
+        </nav>
+    </div>
+</header>
+<div style="width: 100%; height:100px"></div>
+<div class="panel panel-primary">
+    <div class="panel-heading">
+        <h2>All Companies</h2>
+    </div>
+    <div class="panel-body">
+        <table id="example" class="table table-striped table-bordered table-sm row-border hover" cellspacing="0"
+            width="100%">
+
+            <thead>
+                <tr>
+                    <th>Company</th>
+                    <th>Description</th>
+                    <th>Open Date</th>
+                    <th>Close Date</th>
+                    <th>Actions</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr *ngFor="let company of Allcompanies">
+                    <td>{{company.nom}}</td>
+                    <td>{{company.description}}</td>
+                    <td>{{company.openDate}}</td>
+                    <td>{{company.closeDate}}</td>
+
+                    <td>
+                        <button style='margin-right:16px' class="btn btn-primary" (click)="enrollCoure(company.id)"
+                            [disabled]="checkCompany(company.id)">Enroll</button>
+                        <button style='margin-right:16px' class="btn btn-success"
+                            (click)="showCompanyWithDetails('modal1',company.id)">details</button>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+    <div class="container-fluid">
+        <div class="row" *ngFor="let company of Allcompanies" class="companies-list">
+            <div class="company-item">
+                <div class="">
+                    <div class="icon"><i class="bx bx-layer"></i></div>
+                    <h4><a>{{company.nom}}</a></h4>
+                    <p>{{company.description}}</p>
+                    <button style='margin-right:16px' class="btn btn-primary" (click)="enrollCoure(company.id)"
+                        [disabled]="checkCompany(company.id)">Enroll</button>
+                    <button style='margin-right:16px' class="btn btn-success"
+                        (click)="showCompanyWithDetails('modal1',company.id)">details</button>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<footer id="footer">
+
+    <div class="footer-top">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-3 col-md-6 footer-links">
+                    <h4>Useful Links</h4>
+                    <ul>
+                        <li><i class="bx bx-chevron-right"></i> <a href="#">Home</a></li>
+                        <li><i class="bx bx-chevron-right"></i> <a href="#services">Companies</a></li>
+                        <li><i class="bx bx-chevron-right"></i> <a href="#about">About</a></li>
+                        <li><i class="bx bx-chevron-right"></i> <a href="#team">Reviews</a></li>
+                        <li><i class="bx bx-chevron-right"></i> <a href="#contact">Contact US</a></li>
+                    </ul>
+                </div>
+                <div class="col-lg-3 col-md-6 footer-links">
+                    <h4>Our Companies</h4>
+                    <ul>
+                        <li><i class="bx bx-chevron-right"></i> <a href="#">Web Design</a></li>
+                        <li><i class="bx bx-chevron-right"></i> <a href="#">Web Development</a></li>
+                        <li><i class="bx bx-chevron-right"></i> <a href="#">Product Management</a></li>
+                        <li><i class="bx bx-chevron-right"></i> <a href="#">Marketing</a></li>
+                        <li><i class="bx bx-chevron-right"></i> <a href="#">Graphic Design</a></li>
+                    </ul>
+                </div>
+                <div class="col-lg-3 col-md-6 footer-links">
+                    <h4>Our Social Networks</h4>
+                    <p></p>
+                    <div class="social-links mt-3"> <a href="#" class="twitter"><i class="bx bxl-twitter"></i></a> <a
+                            href="#" class="facebook"><i class="bx bxl-facebook"></i></a> <a href="#"
+                            class="instagram"><i class="bx bxl-instagram"></i></a> <a href="#" class="google-plus"><i
+                                class="bx bxl-skype"></i></a> <a href="#" class="linkedin"><i
+                                class="bx bxl-linkedin"></i></a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="container footer-bottom clearfix">
+        <div class="copyright">Copyright &copy; faang-layoffs <strong><span>2022</span></strong>. All Rights Reserved</div>
+    </div>
+</footer>
+
+<modal-popup id="modal1">
+    <form action="" class="mt-1" style="padding-left : 20px;padding-right : 20px">
+        <h5 class="mb-3">Company Details</h5>
+        <div class="form-floating mb-3">
+            <input type="text" class="form-control" id="floatingInput" placeholder="Name" name="Name"
+                [(ngModel)]="companyName" readonly>
+            <label for="floatingInput">Name</label>
+        </div>
+        <div class="form-floating mb-3">
+            <input type="text" class="form-control" id="floatingInput" placeholder="company Description"
+                name="companyDescription" [(ngModel)]="companyDescription" readonly>
+            <label for="floatingInput">Description</label>
+        </div>
+
+        <div class="form-floating mb-3">
+            <input type="date" class="form-control" id="floatingPassword" placeholder="Password" name="openDate"
+                [(ngModel)]="openDate" readonly>
+            <label for="floatingPassword">Open Date</label>
+        </div>
+        <div class="form-floating mb-3">
+            <input type="date" class="form-control" id="floatingPassword" placeholder="Password" name="closeDate"
+                [(ngModel)]="closeDate" readonly>
+            <label for="floatingPassword">Close Date</label>
+        </div>
+
+
+        <div class="d-grid gap-2 d-md-flex justify-content-md-end">
+            <button class="btn btn-danger" (click)="closeModal('modal1');">Close</button>
+        </div>
+
+    </form>
+
+</modal-popup>
